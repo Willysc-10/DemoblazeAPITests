@@ -1,0 +1,27 @@
+
+# Conclusiones del ejercicio de pruebas API Demoblaze
+
+1. El servicio de registro (`signup`) permite crear usuarios siempre que el nombre no exista previamente.
+   - En caso de duplicar un usuario, el servicio devuelve un error (código 500).
+
+2. El servicio de login funciona correctamente:
+   - Con credenciales válidas devuelve estado 200 y un objeto de autenticación.
+   - Con credenciales inválidas devuelve estado 500, indicando error de autenticación.
+
+3. Karate DSL facilita la escritura de pruebas API en un formato legible y reproducible.
+   - Permite definir escenarios de forma clara.
+   - Genera reportes automáticos en HTML para revisar los resultados.
+
+4. El flujo de ejecución con Maven asegura que las pruebas sean fácilmente replicables por cualquier persona que clone el repositorio.
+
+---
+
+## Recomendaciones
+- Implementar validaciones adicionales sobre el contenido del `response` y no solo el `status`.
+- Extender el proyecto para cubrir otros endpoints de la API Demoblaze (ejemplo: `addtocart`, `deletecart`, `viewcart`).
+- Integrar las pruebas en un pipeline de CI/CD para ejecución automática en cada cambio.
+
+---
+
+## Conclusión general
+El ejercicio permitió comprobar la funcionalidad básica de la API Demoblaze y evidenciar cómo un framework BDD como Karate puede usarse de manera efectiva para pruebas de servicios REST.
